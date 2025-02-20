@@ -1,35 +1,26 @@
-/*Use Map and List to create a program that stores weather data for different cities (temperature,
-humidity, etc.). Write a function that can retrieve and print weather details using a city name.
-*/
-void main() {
-  Weather wether = Weather();
+/**
+ *. Maps, Functions & User Input
+    Create a Dart program that:
+    - Declares a `Map<String, int>` where keys are fruit names and values are their
+    prices.
+    - Implements a function `getPrice(String fruitName)` that returns the price of a
+    given fruit.
+    - If the fruit is not found, return -1.
+    Call the function inside `main()` and print the result
+ */
 
-  wether.addCity("New York", 22, 60);
-  wether.addCity("Los Angeles", 28, 50);
-  wether.addCity("Chicago", 18, 70);
-
-  wether.display("New York");
-  wether.display("Los Angeles");
-  wether.display("Chicago");
-  wether.display("Miami");
+int getPrice(String fruitName , Map<String , int >fruitPrices ) {
+  return fruitPrices[fruitName] ?? -1;
 }
 
-class Weather {
-  Map<String, Map<String, dynamic>> weatherlist = {};
+void main (){
 
-  void addCity(String city, int temperature, int humidity) {
-    weatherlist[city] = {"Temperature": temperature, "Humidity": humidity};
-
-  }    
-
-  void display(String city) {
-    if (weatherlist.containsKey(city)) {
-      print("Weather in $city:");
-      weatherlist[city]!.forEach((key, value) {
-        print("$key: $value");
-      });
-    } else {
-      print("Weather data for $city not found.");
-    }
-  }
+  Map<String, int> fruitPrices = {
+    "Apple": 3,
+    "Banana": 1,
+    "Orange": 2,
+    "Mango": 5,
+    "Grapes": 4
+  };
+  print(getPrice("Grapes" , fruitPrices) ==-1 ? "Fruit not found." : getPrice("Grapes" , fruitPrices));
 }

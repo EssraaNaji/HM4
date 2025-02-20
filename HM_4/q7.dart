@@ -1,19 +1,20 @@
-/*Create a program that asks the user to input a number and checks if it's positive, negative, or zero
-using if-else statements*/
-import 'dart:io';
-
+/**
+ *7. Loops, Conditional Statements & Logical Operators
+    Write a program that prints the numbers 1 to 20 but:
+    - If a number is divisible by 3, print "Fizz".
+    - If a number is divisible by 5, print "Buzz".
+    - If a number is divisible by both 3 and 5, print "FizzBuzz".
+ */
 void main() {
-
-  stdout.write("Enter a number: ");
-
-  // Read user input and convert it to a number
-  double? number = double.parse(stdin.readLineSync()!);
-
-  if (number > 0) {
-    print("The number is positive.");
-  } else if (number < 0) {
-    print("The number is negative.");
-  } else {
-    print("The number is zero.");
+  for (int i = 1; i <= 20; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      print("FizzBuzz");
+    } else if (i % 3 == 0) {
+      print("Fizz");
+    } else if (i % 5 == 0) {
+      print("Buzz");
+    } else {
+      print(i);
+    }
   }
 }

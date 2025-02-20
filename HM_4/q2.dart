@@ -1,49 +1,21 @@
-/*Implement a program that uses a List to store grocery items. It should allow adding, removing, and
-displaying items. Use functions with return types and optional/named parameters. Make sure to
-handle possible null values*/
-void main() {
-  Grocery groceryList = Grocery();
+/*
+  2. Arithmetic Operators, Conditional Statements & Functions
+Write a function `calculateBonus(int salary, int yearsWorked)` that calculates a
+bonus based on the following rules:
+- If the employee has worked for 5 or more years, they get a 10% bonus.
+- Otherwise, they get a 5% bonus.
+The function should return the bonus amount.
+Then, call the function inside `main()` and print the result*/
 
-  groceryList.addItem("Apples");
-  groceryList.addItem("Bananas");
-  groceryList.addItem("Milk");
-  groceryList.displayItems();
-
-  groceryList.removeItem("Bananas");
-  groceryList.displayItems();
+double calculateBonus(int salary, int yearsWorked) {
+  double bonusPercentage = (yearsWorked >= 5) ? 0.10 : 0.05;
+  return salary * bonusPercentage;
 }
 
-class Grocery {
-  List<String> items = [];
+void main() {
+  int salary = 78900;
+  int yearsWorked = 6;
 
-  void addItem(String item) {
-    if (item.isNotEmpty) {
-      items.add(item);
-
-    } else {
-      print("empty item.");
-    }
-  }
-
-  bool removeItem(String item) {
-    if (items.contains(item)) {
-      items.remove(item);
-      print("Removed: $item");
-      return true;
-    } else {
-      print("Item not found: $item");
-      return false;
-    }
-  }
-
-  void displayItems() {
-    if (items.isEmpty) {
-      print("Grocery list is empty.");
-    } else {
-      print("Grocery List:");
-      for (var item in items) {
-        print(item);
-      }
-    }
-  }
+  double bonus = calculateBonus(salary, yearsWorked);
+  print(bonus.toStringAsFixed(2));
 }
