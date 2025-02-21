@@ -1,30 +1,34 @@
-/*Task 1: Create a map representing a student with keys for name, age, and grade. Add, update,
-and remove entries from the map, printing the map after each operation.
-- Task 2: Iterate over the map and print each key-value pair*
-
+/**
+ * 6. Null Safety, Encapsulation & Classes
+    Create a class `Person` with the following attributes:
+    - `String name`
+    - `int? age` (nullable)
+    - `bool isStudent` (default is false)
+    Implement:
+    - A constructor that initializes `name` and `age`.
+    - A method `displayInfo()` that prints the person's details.
+    In `main()`, create an instance of `Person` and call `displayInfo()`.
  */
+class Person {
+  String name;
+  int? age;
+  bool isStudent;
+
+
+  Person(this.name, this.age,{ this.isStudent = false});
+
+
+  void displayInfo() {
+    print("Name: $name");
+    print("Age: ${age ?? ''}");
+    print("Student: ${isStudent ? 'Yes' : 'No'}");
+  }
+}
+
 void main() {
-  // Task 1:
-  Map<String, dynamic> student = {
-    'name': 'Alice',
-    'age': 20,
-    'grade': 'A'
-  };
-  //add
-  student['subject'] = 'Mathematics';
-  print(student);
+  Person person1 = Person("Alice", 25, isStudent: true);
+  person1.displayInfo();
 
- //update
-  student['grade'] = 'A+';
-  print(student);
-
-//remove
-  student.remove('age');
-  print(student);
-
-
- //task 2:
-  student.forEach((key, value) {
-    print("$key: $value");
-  });
+  Person person2 = Person("Bob" , 30 );
+  person2.displayInfo();
 }

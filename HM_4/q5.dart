@@ -1,26 +1,17 @@
-/*Create a class with a few properties and methods. Instantiate the class and use the dot operator to
-access and print its properties and methods*/
-class Car {
+/**
+ * Sets, Functions & Return Statement
+    Write a function `uniqueNames(List<String> names)` that:
+    - Accepts a list of names.
+    - Returns a Set containing only unique names.
+    Call the function inside `main()` and print the result
+ */
 
-  String brand;
-  String model;
-  int year;
-
-
-  Car(this.brand, this.model, this.year);
-  void displayInfo() {
-    print("Car: $brand $model, Year: $year");
-  }
+Set<String> uniqueNames(List<String> names) {
+  return names.toSet();
 }
 
 void main() {
+  List<String> names = ["essraa", "naji", "mohamed", "essraa",];
 
-  Car myCar = Car("Toyota", "Corolla", 2010);
-  print("Brand: ${myCar.brand}");
-  print("Model: ${myCar.model}");
-  print("Year: ${myCar.year}");
-
-
-  myCar.displayInfo();
-
+ print(uniqueNames(names));
 }

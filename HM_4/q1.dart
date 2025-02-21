@@ -1,39 +1,19 @@
-/*Basic Calculator:
-Create a Dart program that takes two numbers as input and performs addition, subtraction,
-multiplication, and division using variables, arithmetic operators, and functions. Also, include
-optional parameters for different operations (e.g., addition of multiple numbers).*/
-import 'dart:io';
+/*
+*
+* 1. Variables, Data Types & Print Statement
+Create a Dart program that declares and initializes the following variables:
+- Your name (String)
+- Your age (int)
+- Your height (double)
+- Whether you are a student (bool)
+Then, print these values using a single print statement
+* */
 
 void main() {
-  print('Enter the first number:');
-  double num1 = double.parse(stdin.readLineSync()!);
+  String name = "essraa";
+  int age = 25;
+  double height = 5.9;
+  bool isStudent = true;
 
-  print('Enter the second number:');
-  double num2 = double.parse(stdin.readLineSync()!);
-      print('Result: ${add(num1, num2)}');
-      print('Result: ${subtract(num1, num2)}');
-      print('Result: ${multiply(num1, num2)}');
-      print('Result: ${divide(num1, num2)}');
-
-
-}
-
-double add(double a, double b) {
-  return a + b;
-}
-
-double subtract(double a, double b) {
-  return a - b;
-}
-
-double multiply(double a, double b) {
-  return a * b;
-}
-
-double divide(double a, double b) {
-  if (b == 0) {
-    print('Error: Division by zero');
-    return double.nan;
-  }
-  return a / b;
+  print("Name: $name, Age: $age, Height: $height, Student: $isStudent");
 }
